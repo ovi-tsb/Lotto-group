@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="top-games-wrap">
+
+    <p id="notice"><%= notice %></p>
+
+    <h1>Games list</h1>
+    
+    <table class="table table-hover">
+      <thead>
+        <tr class="sortable-table">
+          <th>
+            #
+          </th>
+          <th class=''>
+            Name
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <%= render "games/game" %> 
+      </tbody>
+    </table>
+
+    
+
+    <br>
+
+    <%= link_to 'New Game', new_game_path %>
+
+  </div>
+</div>

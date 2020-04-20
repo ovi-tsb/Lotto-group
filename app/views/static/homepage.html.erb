@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="top-home-wrap">
+    <h1>Home Page</h1>
+
+    <% if current_user.try(:type) == 'AdminUser' %>
+      <h2>Hello Admin</h2>
+      <div><%= current_user.last_name.capitalize %></div>
+    <% end %>
+    <div class="">
+      <% @games.order("name DESC").each do |game| %>
+        <div class="col-md-3 game-slot">
+          <h2><%= game.name %></h2>
+          <%= image_tag(game.gameimage_url)  if game.gameimage?%>
+        </div>
+      <% end %>
+    </div>
+    <div class="let-play">
+      <%= link_to "Play", groups_path, class: 'btn btn-danger btn-sm'  %> 
+    </div>
+    
+  </div>
+</div>

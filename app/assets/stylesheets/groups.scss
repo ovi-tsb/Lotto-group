@@ -1,0 +1,50 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.game-image img{
+  max-height: 100px;
+}
+.table-wrap {
+  /*background: #fff;*/
+  /*padding: 20px;*/
+}
+
+.table-wrap td p {
+  display:table-cell;
+  padding-top:10px;
+  vertical-align:middle;
+}
+.table-wrap tr td  {
+  /*height: 50px;*/
+}
+.btn-join {
+  background-color: #FF0000;
+  color: #fff;
+}
+a.btn.btn-join  {
+  font-weight: 500;
+  font-size: 1em;
+}
+.top-group h3{
+  text-align: center;
+}
+.top-group {
+  width: 100%;
+}
+.top-group .game-image img {
+  margin: 20px auto;
+  display:block;
+}
+.verification-code {
+  width:120%;
+}
+.group-members {
+  border: 1px solid red;
+}
+
+
+
+
+
+
+

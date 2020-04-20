@@ -1,0 +1,2 @@
+module Six49WiningNumbersHelper
+end

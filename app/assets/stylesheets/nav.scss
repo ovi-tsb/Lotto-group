@@ -1,0 +1,24 @@
+.bg-transparent {
+  /*background-color: rgba(255, 255, 255, 0.1);*/
+  background-color: #00407D;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  align-items: center;
+  box-shadow: 0 0 25px 0 black;
+  padding: 20px;
+  z-index: 14;
+  
+}
+.bg-transparent a {
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-top: -6px;
+}
+.bg-transparent ul li a:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color:grey;
+}

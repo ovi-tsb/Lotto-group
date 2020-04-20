@@ -1,0 +1,2 @@
+class PrivateGroup < Group
+end

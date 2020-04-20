@@ -1,0 +1,47 @@
+<% @groups.each do |group| %>
+  <tr>
+    <th>
+      <p><%= group.id %></p>
+    </th>
+    <td>
+      <p><%= group.name.capitalize %></p>
+    </td>
+    <td>
+      <p><%= group.user.first_name %></p>
+    </td>
+    <td>
+      <!-- < if group.game.id? %> -->
+        <p>1 x <%= group.game.name %></p>
+      <!-- < end %> -->
+    </td>
+    <td>
+      <p>
+        <% if group.encore? %>
+          1 x Encore  
+        <% end %>
+      </p>
+    </td>
+    <td>
+      <p><%= group.noofplays %></p> 
+    </td>
+    <td>
+      <p><%= group.shares %></p> 
+    </td>
+    <td>
+      <p>5$</p> 
+    </td>
+    <td>
+      <% if current_user.id == group.user_id %>
+        <%= link_to "Delete", group_path(group), method: :delete, id: "delete_group_#{group.id}_from_index", class: 'btn btn-warning btn-sm', data: {confirm: 'Are you sure you want to delete this story?'} %>
+      <% end %>
+    </td>
+    <td>
+      <% if current_user.id == group.user_id %>   
+        <%= link_to "Edit", edit_group_path(group), id: "edit_#{group.id}", class: 'btn btn-info btn-sm'  %>  
+      <% end %>
+    </td>
+    <td>
+      <%= link_to 'Join', group, :class => "btn btn-join"%>
+    </td>
+  </tr>
+<% end %>

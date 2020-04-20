@@ -1,0 +1,2 @@
+class LottarioWiningNumber < ApplicationRecord
+end

@@ -1,0 +1,82 @@
+<%  winnerNo = MaxWiningNumber.last.numero %>
+<%  from = MaxWiningNumber.last.from %>
+<%  encore = MaxWiningNumber.last.numbers %>
+<%  rows = MaxWiningNumber.last.maxmillion %>
+<%  maxmil = MaxWiningNumber.last.maxmil %>
+
+  <% arr = winnerNo.split(/,/) %>
+  <% arr.delete_at(7)  %>
+  <% arr.insert(7, "" )  %>
+  <% arr.reject(&:blank?) %>
+
+<div class="container-fluid">
+  <div class="top-max-wrap">
+    <%= image_tag("lotto-max-whiteshadow.png", :alt => "lotto-max") %>
+    <h3>THE NEXT JACKPOT IS:</h3>
+    <div class="big-prize">
+      <%= maxmil.first(-4) %>
+      <small class="small-text">
+        <abbr title="estimated">EST.</abbr>
+      </small>
+    </div>
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="winning-no-wrap">
+    <div>
+      <h2>Winning numbers</h2>
+      <h4><%= from  %></h4>
+    </div>
+    <hr>
+    
+    <div class="col-md-8">
+      <ul>
+        <!-- < arr.reject(&:blank?).each do |number| %> -->
+        <% arr.each do |number| %>
+          <li class="winner_list">
+            <%= number.scan(/\d{2}/).join('') %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="encore col-md-3">
+      <%= image_tag("encore.png", :alt => "encore") %>
+      <%= encore %>
+    </div>
+    <br><br>
+    <% if rows %>
+      <div class="acordeon-btn">
+        <button type="button" class="btn btn-lg btn-info maxmillion-draws" data-toggle="collapse" data-target="#demo">See all MaxMillions Draws</button>
+      </div>
+    
+      <div id="demo" class="collapse">
+        <div class="space-table">
+            <table class="table prize-breakdown-table">
+              <tbody>
+                <% MaxWiningNumber.last.maxmillion.each do |maxmillion| %>
+                <tr>
+                  <td class="space">
+                    <p>
+                      <%= maxmillion.join("<br>").html_safe %>
+                    </p>
+                  </td> 
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    <% end %>
+
+  </div>  
+
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<%= simple_form_for(@group) do |f| %>
+  
+
+  <ul>
+    <% @group.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
+  <div class="form-inputs">
+    <label>Game 
+      <%= select_tag(:game_id, options_for_select(Game.pluck(:name, :id)), {prompt: 'Select game'}) %>
+      </label> 
+  </div>
+
+  
+  
+  <div class="form-inputs">
+    <label>Name <%= f.text_field :name, class: "form-control" %> </label>
+  </div>
+
+  <div class="form-inputs">
+    <label>Shares <%= f.text_field :shares, class: "form-control" %> </label>
+  </div>
+
+  <div class="form-inputs">
+    <label>Plays <%= f.text_field :noofplays, class: "form-control" %> </label>
+  </div>
+
+  <div class="form-inputs">
+    <label>Encore <%= f.check_box :encore, class: "form-control" %> </label>
+  </div>
+
+  <div class="form-inputs">
+    <label>Private <%= f.check_box :private, class: "form-control" %> </label>
+  </div>
+
+  <%= f.hidden_field :unique_identifier, value: SecureRandom.hex(32) %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

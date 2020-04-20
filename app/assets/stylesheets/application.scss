@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "form.scss";
+ @import "nav.scss";
+ @import "game.scss";
+ @import "home.scss";
+ @import "group.scss";
+
+
+

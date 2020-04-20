@@ -1,0 +1,2 @@
+module MaxWiningNumbersHelper
+end

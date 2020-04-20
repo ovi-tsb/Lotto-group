@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@game) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <label>Name <%= f.text_field :name, class: "form-control" %> </label>
+  </div>
+
+  <label>Image <%= f.file_field :gameimage, class: "form-control" %> </label>
+  <p class="game_image">
+    <%= image_tag(@game.gameimage_url) if @game.gameimage? %>
+  </p>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

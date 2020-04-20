@@ -1,0 +1,88 @@
+<nav class="navbar navbar-dark bg-transparent">
+  <div class="container-fluid">  
+    <div class="navbar-header">
+      <!-- <nav class="navbar navbar-light bg-light"> -->
+        <!-- <= link_to image_tag("https://s3.us-east-2.amazonaws.com/mississaugajudo/brand-logo.png", alt: "logo"), static_homepage_path, class: 'navbar-brand' %> -->
+      <!-- </nav> -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>  
+      
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav ml-auto submenu">
+          <li class="">
+            <%= link_to "Home", root_path %>
+          </li>
+
+          <li class=" hidden-xs">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Games
+            <span class="caret"></span>
+            </a>
+                <ul class="dropdown-menu">
+                  <li class="">
+                    
+                  </li>
+                  <li class="">
+                    <%= link_to "Lotto Max", max_wining_numbers_path(anchor: 'instructors') %>
+                  </li>
+                  <li class="">
+                   <%= link_to "Lotto 6/49", six49_wining_numbers_path(anchor: 'fees') %>
+                  </li>
+                  <li class="">
+                    <%= link_to "Lottario", lottario_wining_numbers_path %>
+                  </li>
+                  
+                </ul>
+              
+          </li>
+
+          
+
+          <% if !user_signed_in? %>
+            <li class="">
+              <%= link_to "Login", new_user_session_path %>
+            </li>
+            <li class="">
+              <%= link_to "Sign Up", new_user_registration_path  %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </li>
+            <li>
+              <%= link_to "Create group", new_group_path %>
+            </li>
+            <li>
+              <%= link_to "Groups", groups_path %>
+            </li>
+            
+            <% if current_user.try(:type) == 'AdminUser' %>
+              <li>
+                <%= link_to "New Game", games_path %>
+              </li>
+              <li>
+                <!-- <= link_to "Admin Dashboard", admin_root_path %> -->
+              </li>
+              <li>
+                <!-- <= link_to "New Post",  new_post_path %> -->
+              </li>
+            <% elsif %>
+              <li>
+                <%= link_to "User Page", users_path %>
+              </li>
+            <% end %>
+            
+          <% end %>
+          
+        </ul>
+      
+    </div>
+  </div>
+</nav>
+
+

@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="top-max-wrap">
+    <p id="notice"><%= notice %></p>
+    ID: <%= @game.id %>
+    <br>
+    <h2><%= @game.name %></h2>
+    <%= image_tag(@game.gameimage_url)  if @game.gameimage?%>
+    <br>
+    <%= link_to 'Edit', edit_game_path(@game) %> |
+    <%= link_to 'Back', games_path %>
+  </div>
+</div>

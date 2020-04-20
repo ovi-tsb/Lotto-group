@@ -1,0 +1,64 @@
+<%  winnerNo = LottarioWiningNumber.last.numero %>
+<%  from = LottarioWiningNumber.last.from %>
+<%  encore = LottarioWiningNumber.last.numbers %>
+<%  maxmillion = LottarioWiningNumber.last.maxmillion %>
+<%  maxmil = LottarioWiningNumber.last.maxmil %>
+
+  <% arr = winnerNo.split(/,/) %>
+  <!-- < arr.delete_at(7)  %> -->
+  <!-- < arr.insert(7, "" )  %> -->
+  <% arr.reject(&:blank?) %>
+
+  <!-- <= arr.first(6) %> -->
+
+<div class="container-fluid">
+  <div class="top-lottario-wrap">
+    <%= image_tag("lottario.png", :alt => "lottario") %>
+    <h3>THE NEXT JACKPOT IS:</h3>
+    <div class="big-prize">
+      <%= maxmil.first(-4) %>
+      <small class="small-text">
+        <abbr title="estimated">EST.</abbr>
+      </small>
+    </div>
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="winning-no-wrap">
+    <div>
+      <h2>Winning numbers</h2>
+      <h4><%= from  %></h4>
+    </div>
+    <hr>
+    
+    <div class="col-md-10">
+      <ul>
+        <!-- < arr.reject(&:blank?).each do |number| %> -->
+        <% arr.first(8).each do |number| %>
+          <li class="winner_list">
+            <%= number.scan(/\d{2}/).join('') %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <ul>
+        <h3 class="early_bird">EARLY BIRD</h3>
+        <% arr.last(4).each do |number| %>
+          <li class="winner_list_lottario">
+            <%= number.scan(/\d{2}/).join('') %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="encore col-md-3">
+      <%= image_tag("encore.png", :alt => "encore") %>
+      <%= encore %>
+    </div>
+    <br><br>
+    
+  </div>  
+
+</div>
+

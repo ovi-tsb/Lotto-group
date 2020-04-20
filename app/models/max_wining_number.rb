@@ -1,0 +1,2 @@
+class MaxWiningNumber < ApplicationRecord
+end

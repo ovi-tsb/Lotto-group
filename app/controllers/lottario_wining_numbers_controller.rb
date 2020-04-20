@@ -1,0 +1,2 @@
+class LottarioWiningNumbersController < ApplicationController
+end

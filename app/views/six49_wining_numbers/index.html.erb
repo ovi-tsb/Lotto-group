@@ -1,0 +1,63 @@
+<%  winnerNo = Six49WiningNumber.last.numero %>
+<%  from = Six49WiningNumber.last.from %>
+<%  encore = Six49WiningNumber.last.numbers %>
+<%  maxmillion = Six49WiningNumber.last.maxmillion %>
+<%  maxmil = Six49WiningNumber.last.maxmil %>
+<%  guaranteed = Six49WiningNumber.last.guaranteedmil %>
+
+
+
+  <% arr = winnerNo.split(/,/) %>
+  <!-- < arr.delete_at(7)  %> -->
+  <!-- < arr.insert(7, "" )  %> -->
+  <!-- < arr.reject(&:blank?) %> -->
+
+<div class="container-fluid">
+  <div class="top-649-wrap">
+    <%= image_tag("logo-649.png", :alt => "lotto-649") %>
+    <h3>THE NEXT JACKPOT IS:</h3>
+    <div class="big-prize">
+      <%= maxmil.first(-4) %>
+      <small class="small-text">
+        <abbr title="estimated">EST.</abbr>
+      </small>
+    </div>
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="winning-no-wrap">
+    <div>
+      <h2>Winning numbers</h2>
+      <h4><%= from  %></h4>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+          <!-- < arr.reject(&:blank?).each do |number| %> -->
+          <% arr.each do |number| %>
+            <li class="winner_list">
+              <%= number.scan(/\d{2}/).join('') %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="encore col-md-3">
+        <%= image_tag("encore.png", :alt => "encore") %>
+        <%= encore %>
+      </div>
+    </div>
+    <br><br>
+    
+    <div class="guaranteed-649">
+      <h3>Guaranteed $1 Million Prize Draw: <i><%= guaranteed %></i></h3>
+      
+    </div>
+    
+    
+
+  </div>  
+
+</div>
+
