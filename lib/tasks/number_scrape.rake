@@ -5,8 +5,8 @@ task :fetch_numbers => :environment do
   require 'open-uri'
   require 'pry'
 
-  require 'openssl'
-  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+  # require 'openssl'
+  # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
   url = "https://lottery.olg.ca/en-ca/lotto-games/lotto-max/about-lotto-max"
   doc = Nokogiri::HTML(open(url))
