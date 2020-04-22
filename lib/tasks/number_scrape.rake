@@ -3,7 +3,7 @@ task :fetch_numbers => :environment do
 
   require 'nokogiri'
   require 'open-uri'
-  require 'pry'
+  # require 'pry'
 
   require 'openssl'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
