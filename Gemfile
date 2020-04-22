@@ -5,7 +5,7 @@ ruby '2.4.1'
 
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3', '>= 4.3.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
@@ -54,10 +54,10 @@ group :development do
 end
 
 # group :test do
-  # Adds support for Capybara system testing and selenium driver
-  # gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  # gem 'chromedriver-helper'
+#   # Adds support for Capybara system testing and selenium driver
+#   gem 'selenium-webdriver'
+#   # Easy installation and use of chromedriver to run system tests with Chrome
+#   gem 'chromedriver-helper'
 # end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
