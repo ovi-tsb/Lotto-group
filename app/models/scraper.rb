@@ -1,13 +1,13 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
+# require 'nokogiri'
+# require 'open-uri'
+# require 'pry'
 
 # require 'openssl'
 # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-url = "https://lottery.olg.ca/en-ca/lotto-games/lotto-max/about-lotto-max"
-doc = Nokogiri::HTML(open(url))
-top = doc.css('span.mw-headline')[0]&.text || '$0000'
+# url = "https://lottery.olg.ca/en-ca/lotto-games/lotto-max/about-lotto-max"
+# doc = Nokogiri::HTML(open(url))
+# top = doc.css('span.mw-headline')[0]&.text || '$0000'
 # links = doc.css('.winning-number')[0]&.text || '$0000'
 
 # puts links
