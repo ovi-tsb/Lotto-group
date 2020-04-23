@@ -17,7 +17,6 @@ class InvitesController < ApplicationController
   end
 
   private
-    # Only allow a list of trusted parameters through.
     def invite_params
       params.require(:invite).permit(:emails, :group_id, :sender_id, :recipient_id, :token)
     end
