@@ -7,11 +7,13 @@ class InvitesController < ApplicationController
      
     # respond_to do |format|
       if @invite.save
-        InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver #send the invite data to our mailer to deliver the email
+        InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver.now #send the invite data to our mailer to deliver the email
+        flash.now[:notice] = 'Message sent!'
       else
         # oh no, creating an new invitation failed
         # format.html { render :new }
         # format.json { render json: @invite.errors, status: :unprocessable_entity }
+        flash.now[:alert] = 'Error while sending message!'
       end
     # end
   end
