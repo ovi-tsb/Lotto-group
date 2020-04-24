@@ -93,9 +93,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # for emails to go out
-   config.action_mailer.default_url_options = { host: 'http://enigmatic-chamber-16228.herokuapp.com', protocol: 'https' }
+   config.action_mailer.default_url_options = { host: 'http://enigmatic-chamber-16228.herokuapp.com' }
    config.action_mailer.delivery_method = :smtp
    config.action_mailer.perform_deliveries = true
+   
    config.action_mailer.smtp_settings = {
      :user_name => ENV['SENDGRID_USERNAME'],
      :password => ENV['SENDGRID_PASSWORD'],
@@ -105,5 +106,5 @@ Rails.application.configure do
      :authentication => :plain,
      :enable_starttls_auto => true
    }
-  
+
 end
