@@ -6,8 +6,8 @@ class InvitesController < ApplicationController
      @invite.sender_id = current_user.id # set the sender to the current user
      
     # respond_to do |format|
-      if @invite.deliver
-        InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver.now #send the invite data to our mailer to deliver the email
+      if @invite.save
+        UserNotifierMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver #send the invite data to our mailer to deliver the email
         flash.now[:notice] = 'Message sent!'
       else
         # oh no, creating an new invitation failed

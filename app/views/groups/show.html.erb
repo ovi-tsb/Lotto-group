@@ -46,6 +46,9 @@
             <%= f.submit 'Send' %>
         <% end %>
 
+        <br><br>
+        <%= link_to "Send Email", invite_path( @group.invites), class: "btn btn-primary custom-class", :type => "button" %><br><br>
+
 
     <% elsif %>
         <h4>Public</h4>

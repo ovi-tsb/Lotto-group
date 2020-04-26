@@ -77,6 +77,20 @@ class GroupsController < ApplicationController
       end
     end
 
+    def new_comment
+      @group = Group.find(params[:id])
+      
+      @user = current_user
+
+      @game = @group.game_id
+      
+      CommentMailer.new_comment(@group, current_user, @game).deliver_now
+      
+      flash[:notice] = "Email has been sent."
+      redirect_to group_path
+
+    end
+
     private
       # Only allow a list of trusted parameters through.
       def group_params

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'static#homepage'
 
-  
-
+  # get :contact, to: 'groups#contact'
+  # get '/invoice_mail/:id', to: 'invoices#invoice_mail', as: :invoice_mail
 
 end
