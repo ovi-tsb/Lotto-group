@@ -6,11 +6,15 @@
 %h1 
   A new comment was posted for your 
   %br
-  = @user.first_name.capitalize
-  = @user.last_name.capitalize
+  = @group.id
+  / = @group.name
+  = @user.noofplays
+  = @group.first_name.capitalize
+  = @group.last_name.capitalize
 
   %br
-  = @game.name.capitalize
+  / = @game.name
+  %br
   = @group.id
 
 
