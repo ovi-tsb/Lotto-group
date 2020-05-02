@@ -3,19 +3,28 @@
 
 %p
   , find me in app/views/comment_mailer/new_comment.html.haml"
-%h1 
+%h3 
   A new comment was posted for your 
   %br
+  Group ID:
   = @group.id
   / = @group.name
-  = @user.noofplays
-  = @group.first_name.capitalize
-  = @group.last_name.capitalize
-
   %br
-  / = @game.name
+  - if @user.try(:type) != 'AdminUser'
+    Number of play: 
+    = @user.noofplays
   %br
+  User Name: 
+  = @user.first_name.capitalize
+  = @user.last_name.capitalize
+  %br
+  Group Id:
   = @group.id
+  Group name:
+  = @game.name
+  %br
+  Game:
+  = @group.name
 
 
 

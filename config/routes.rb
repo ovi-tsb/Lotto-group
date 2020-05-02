@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   # get :contact, to: 'groups#contact'
   get '/new_comment/:id', to: 'groups#new_comment', as: :new_comment
 
+  # get '/new_invite/:id', to: 'groups#new_invite', as: :new_invite
+
 end

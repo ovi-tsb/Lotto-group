@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
       @groups = Group.all.order("name ASC")
       @group = Group.all
 
-      # @game = Game.find_by_id(params[:game_id])
+      @invite = Invite.find_by_id(params[:id])
     end
 
     
@@ -19,6 +19,8 @@ class GroupsController < ApplicationController
 
       @games = Game.all.map{|c| [ c.name, c.id ] }
       @group.game_id = params[:game_id]
+
+      @invite = Invite.new
     end
 
     

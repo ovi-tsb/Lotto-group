@@ -1,13 +1,16 @@
 class InvitesController < ApplicationController
-  before_action :set_invite, only: [:show, :edit, :update, :destroy]
+  # before_action :set_invite, only: [:show, :edit, :update, :destroy]
 
+  def new
+    @invite = Invite.new
+  end
   def create
      @invite = Invite.new(invite_params) # Make a new Invite
      @invite.sender_id = current_user.id # set the sender to the current user
      
     # respond_to do |format|
       if @invite.save
-        UserNotifierMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver #send the invite data to our mailer to deliver the email
+        InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver #send the invite data to our mailer to deliver the email
         flash.now[:notice] = 'Message sent!'
       else
         # oh no, creating an new invitation failed
