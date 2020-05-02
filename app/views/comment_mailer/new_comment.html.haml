@@ -10,21 +10,26 @@
   = @group.id
   / = @group.name
   %br
-  - if @user.try(:type) != 'AdminUser'
-    Number of play: 
-    = @user.noofplays
+  / - if @user.try(:type) != 'AdminUser'
+  Number of play: 
+  = @group.noofplays
   %br
   User Name: 
-  = @group.first_name.capitalize
-  = @group.last_name.capitalize
+  = @group.user.first_name.capitalize
+  = @group.user.last_name.capitalize
   %br
   Group Id:
   = @group.id
+  %br
+  Shares:
+  = @group.shares
+  %br
   Group name:
-  / = @group.name
+  = @group.name
   %br
   Game:
-  / = @game.name
+  / = @group.game_id
+  = @group.game.name
 
 
 

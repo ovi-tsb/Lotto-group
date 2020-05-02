@@ -5,10 +5,10 @@ class CommentMailer < ApplicationMailer
   #
   #   en.comment_mailer.new_comment.subject
   #
-  def new_comment(user, group, game)
+  def new_comment(game, user, group)
     
     @game = game
-    @user = user
+    current_user = user
     @group = group
 
     mail to: "ovi.tsb77@gmail.com", 
