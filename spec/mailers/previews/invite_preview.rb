@@ -5,9 +5,10 @@ class InvitePreview < ActionMailer::Preview
     invite = @invite
     url = Invite.last
     user = @user
+    group = @group
 
 
-    InviteMailer.new_invite(invite, url, user)
+    InviteMailer.new_invite(invite, user, group)
     
     # job = Job.last
     # InvoiceMailer.invoice_mail(invoice, user, job) 

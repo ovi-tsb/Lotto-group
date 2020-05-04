@@ -40,9 +40,9 @@
 
         <br><br>
 
-        
+        <!-- <= simple_form_for(@invite) do |f| %> -->
         <%= form_for Invite.new, :url => invites_path do |f| %>
-        
+
             <%= f.hidden_field :group_id, :value => @group.id %>
             <%= f.label :email %>
             <%= f.email_field :email %>

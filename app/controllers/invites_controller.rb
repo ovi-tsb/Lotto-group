@@ -16,7 +16,7 @@ class InvitesController < ApplicationController
     respond_to do |format| 
        if @invite.save
         # CommentMailer.new_comment(@group, current_user, @game).deliver_now
-        InviteMailer.new_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
+        InviteMailer.new_invite(@invite, @group, new_user_registration_path(:invite_token => @invite.token)).deliver_now
         # InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
          format.html { redirect_to invites_path, notice: 'Group was successfully created.' }
          format.json { render :index, status: :created, location: @invite }
