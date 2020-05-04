@@ -7,7 +7,9 @@ class InviteMailer < ApplicationMailer
     user = User.last
     group = @group
 
-    mail to: "ovi.tsb77@gmail.com", 
-    subject: "New comment for "
+    mail(:to => Invite.last.email, :subject => "New comment for ", from: 'notification@example.com')
+
+    # mail to: "ovi.tsb77@gmail.com", 
+    # subject: "New comment for "
   end
 end

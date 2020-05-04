@@ -1,11 +1,17 @@
 <h1>Hi, New invite html</h1>
 <h4>User: <%= User.last.id %></h4>
+<h3>You have a invitation from <%= Invite.last.sender_name %> to play 
+<%= Group.last.game.name %> game.</h3>
 
 <br>
-<% if @invite.present? %>
-  <%= @invite.email %>
-<% end %>
+
+Invite id: <%= Invite.last.id %>
 <br>
-<!-- <= @invite.group_id %> -->
+Email: <%= Invite.last.email %>
 <br>
-<%= User.last.id %>
+Token: <%= Invite.last.token %>
+<br>
+Group: <%= Invite.last.group_id %>
+<br>
+Sender id: <%= Invite.last.sender_id %>
+<br>
