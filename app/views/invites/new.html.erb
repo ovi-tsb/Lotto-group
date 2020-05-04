@@ -1,0 +1,42 @@
+<br>
+<br>
+<br>
+<div class="well">
+  <h1>new invite</h1>
+
+  <%= form_for Invite.new, :url => invites_path do |f| %>
+      <%= f.label :group %>
+      <%= f.text_field :group_id %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <%= f.submit 'Send' %>
+  <% end %>
+</div>  
+<%= link_to 'Invites', invites_path %>
+<br>
+<br>
+<%= simple_form_for(@invite) do |f| %>
+  
+
+  <ul>
+    <% @invite.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
+  <div class="form-inputs">
+    <label>Group <%= f.text_field :group_id, class: "form-control" %> </label>
+  </div>
+
+  <div class="form-inputs">
+    <label>Email <%= f.email_field :email, class: "form-control" %> </label>
+  </div>
+
+  
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+
+<% end %>

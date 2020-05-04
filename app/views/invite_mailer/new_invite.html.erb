@@ -1,3 +1,11 @@
 <h1>Hi, New invite html</h1>
 
 <%= User.last.id %>
+<br>
+<% if @invite.present? %>
+  <%= @invite.email %>
+<% end %>
+<br>
+<%= Invite.last.group_id %>
+<br>
+<%= User.last.id %>

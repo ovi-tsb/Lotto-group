@@ -4,11 +4,11 @@ class InvitePreview < ActionMailer::Preview
     # comment = Comment.last
     invite = @invite
     url = Invite.last
-       
+    user = @user
 
 
-    InviteMailer.new_invite(invite, url)
-    # user = User.last
+    InviteMailer.new_invite(invite, url, user)
+    
     # job = Job.last
     # InvoiceMailer.invoice_mail(invoice, user, job) 
   end
