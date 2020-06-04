@@ -15,3 +15,6 @@ Group: <%= Invite.last.group_id %>
 <br>
 Sender id: <%= Invite.last.sender_id %>
 <br>
+Link: <%= link_to "Join", new_user_registration_url(:invite_token => Invite.last.token), target: :_blank  %>
+<br>
+<%= link_to new_user_registration_url(:invite_token => Invite.last.token), new_user_registration_url(:invite_token => Invite.last.token), target: :_blank  %>

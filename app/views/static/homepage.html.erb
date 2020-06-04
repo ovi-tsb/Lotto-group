@@ -17,6 +17,13 @@
     <div class="let-play">
       <%= link_to "Play", groups_path, class: 'btn btn-danger btn-sm'  %> 
     </div>
+
+    <% if @token != nil %>
+      <!-- <= hidden_field_tag :invite_token, @token %> -->
+      <h3>Token is present</h3>
+    <% else %>
+      <h3>Token null</h3>
+    <% end %>
     
   </div>
 </div>

@@ -8,7 +8,7 @@ class InvitePreview < ActionMailer::Preview
     group = @group
 
 
-    InviteMailer.new_invite(invite, user, group)
+    InviteMailer.new_invite(invite, user, group, url)
     
     # job = Job.last
     # InvoiceMailer.invoice_mail(invoice, user, job) 
