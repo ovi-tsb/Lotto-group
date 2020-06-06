@@ -25,8 +25,13 @@ gem 'bourbon'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+
 gem 'fog-aws'
+gem 'carrierwave-aws'
+gem 'rmagick'
 gem 'fog', '~> 2.1'
+# gem 'fog-core'
+
 gem 'haml-rails'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'clipboard-rails', '~> 1.7', '>= 1.7.1'
