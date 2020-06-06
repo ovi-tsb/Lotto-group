@@ -7,6 +7,7 @@
       <div><%= current_user.last_name.capitalize %></div>
     <% end %>
     <div class="">
+      
       <% @games.order("name DESC").each do |game| %>
         <div class="col-md-3 game-slot">
           <h2><%= game.name %></h2>
