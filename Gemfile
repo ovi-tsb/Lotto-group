@@ -30,7 +30,7 @@ gem 'fog-aws'
 gem 'carrierwave-aws'
 gem 'rmagick'
 gem 'fog', '~> 2.1'
-# gem 'fog-core'
+gem 'fog-core'
 
 gem 'haml-rails'
 gem 'haml', '~> 5.0', '>= 5.0.4'

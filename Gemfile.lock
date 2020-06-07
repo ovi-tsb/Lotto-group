@@ -643,6 +643,7 @@ DEPENDENCIES
   factory_bot_rails
   fog (~> 2.1)
   fog-aws
+  fog-core
   gritter (~> 1.2)
   haml (~> 5.0, >= 5.0.4)
   haml-rails

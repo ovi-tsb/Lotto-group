@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Lotto_group_development
+  database: LottoGroup_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Lotto_group_test
+  database: LottoGroup_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: Lotto_group_production
-  username: Lotto_group
+  database: LottoGroup_production
+  username: LottoGroup
   password: <%= ENV['LOTTO_GROUP_DATABASE_PASSWORD'] %>

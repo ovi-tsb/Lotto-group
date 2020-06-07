@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_023540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -42,24 +36,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_023540) do
     t.string "unique_identifier"
     t.index ["game_id"], name: "index_groups_on_game_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
-  end
-
-  create_table "inks", force: :cascade do |t|
-    t.string "name"
-    t.string "client"
-    t.string "ink_type"
-    t.string "substrate"
-    t.string "coating"
-    t.string "ink_number"
-    t.string "sap"
-    t.boolean "approved"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "comments"
-    t.string "approved_on"
-    t.integer "customer_id"
-    t.string "modified_by"
-    t.integer "user_id"
   end
 
   create_table "invites", force: :cascade do |t|
