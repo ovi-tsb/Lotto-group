@@ -7,29 +7,29 @@
   A new comment was posted for your 
   %br
   Group ID:
-  = @group.id
-  = @group.name
+  = @game.id
+  = @game.name
   %br
   / - if @user.try(:type) != 'AdminUser'
   Number of play: 
-  = @group.noofplays
+  = @game.noofplays
   %br
   User Name: 
-  = @group.user.first_name.capitalize
-  = @group.user.last_name.capitalize
+  = @game.user.first_name.capitalize
+  = @game.user.last_name.capitalize
   %br
   Group Id:
-  = @group.id
+  = @game.id
   %br
   Shares:
-  = @group.shares
+  = @game.shares
   %br
   Group name:
-  = @group.name
+  = @game.name
   %br
   Game:
   / = @group.game_id
-  = @group.game.name
+  = @game.name
 
 
 

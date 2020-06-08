@@ -11,9 +11,10 @@ class InvitesController < ApplicationController
   end
   def create
 
-     @invite = Invite.new(invite_params) # Make a new Invite
-     @invite.sender_id = current_user.id # set the sender to the current user
-     @invite.sender_name = current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize
+      @invite = Invite.new(invite_params) # Make a new Invite
+      @invite.sender_id = current_user.id # set the sender to the current user
+      # @invite.sender_name = current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize
+      # @invite.sender = "Steve"
     respond_to do |format| 
        if @invite.save
         # CommentMailer.new_comment(@group, current_user, @game).deliver_now
