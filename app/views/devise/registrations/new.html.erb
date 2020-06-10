@@ -19,7 +19,7 @@
             <%= f.input :dob, start_year: 100.years.ago.year, end_year: Date.today.year, label: false, class: "date-dob", discard_day: false, order: [:month, :day, :year] %>
           </label>
           <% if @token != nil %>
-              <%= hidden_field_tag :invite_token, @token %>
+              <%= hidden_field_tag :token, @token %>
           <% end %>
       </div>
 
