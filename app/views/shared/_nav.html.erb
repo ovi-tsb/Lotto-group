@@ -73,7 +73,10 @@
               </li>
             <% elsif %>
               <li>
-                <%= link_to "User Page", users_path %>
+                <%= link_to "Users Page", users_path %>
+              </li>
+              <li style="color: #fff;">
+                <%= current_user.email %>
               </li>
             <% end %>
             

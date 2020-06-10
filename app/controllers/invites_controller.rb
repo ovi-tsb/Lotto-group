@@ -13,12 +13,12 @@ class InvitesController < ApplicationController
 
       @invite = Invite.new(invite_params) # Make a new Invite
       @invite.sender_id = current_user.id # set the sender to the current user
-      # @invite.sender_name = current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize
+      @invite.sender_name = current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize
       # @invite.sender = "Steve"
     respond_to do |format| 
        if @invite.save
         # CommentMailer.new_comment(@group, current_user, @game).deliver_now
-        InviteMailer.new_invite(@invite, @group, new_user_registration_path(:invite_token => @invite.token)).deliver_now
+        InviteMailer.new_invite(@user, @invite, @group, new_user_registration_path(:invite_token => @invite.token)).deliver_now
         # InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
          format.html { redirect_to invites_path, notice: 'Group was successfully created.' }
          format.json { render :index, status: :created, location: @invite }
@@ -52,7 +52,7 @@ class InvitesController < ApplicationController
 
   private
     def invite_params
-      params.require(:invite).permit(:email, :group_id, :sender_id, :recipient_id, :token)
+      params.require(:invite).permit(:email, :group_id, :sender_id, :recipient_id, :token, :sender_name)
     end
 
     def set_invite

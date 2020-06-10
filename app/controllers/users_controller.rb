@@ -3,12 +3,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = current_user
+    # @user = current_user
+    @user = User.all
   end
 
   def create
     @user = User.new(user_params)
-
+    @user.save
     @token = params[:invite_token]
     respond_to do |format|
       if @token != nil
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.all
+    @user = User.find(params[:id])
   end
 
   def edit

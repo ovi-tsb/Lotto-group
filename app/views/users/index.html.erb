@@ -1,0 +1,43 @@
+
+
+<div class="container-fluid">
+  <div class="top-games-wrap">
+
+    <p id="notice"><%= notice %></p>
+
+    <h1>Users list</h1>
+    
+    <table class="table table-hover">
+      <thead>
+        <tr class="sortable-table">
+          <th>
+            # ID
+          </th>
+          <th class=''>
+            First Name
+          </th>
+          <th>
+            Last Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Email
+          </th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <%= render "users/user" %> 
+      </tbody>
+    </table>
+
+    
+
+    <br>
+
+    <%#= link_to 'New Game', new_game_path %>
+
+  </div>
+</div>

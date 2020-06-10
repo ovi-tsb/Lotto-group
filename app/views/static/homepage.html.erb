@@ -6,7 +6,7 @@
       <h2>Hello Admin</h2>
       <div><%= current_user.last_name.capitalize %></div>
     <% end %>
-    <div class="">
+    <div class="row">
       
       <% @games.order("name DESC").each do |game| %>
         <div class="col-md-3 game-slot">
@@ -20,7 +20,7 @@
     </div>
 
     <% if @token != nil %>
-      <!-- <= hidden_field_tag :invite_token, @token %> -->
+      <%= hidden_field_tag :invite_token, @token %>
       <h3>Token is present</h3>
     <% else %>
       <h3>Token null</h3>

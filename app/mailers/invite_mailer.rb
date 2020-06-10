@@ -1,5 +1,5 @@
 class InviteMailer < ApplicationMailer
-  def new_invite(invite, user, group)
+  def new_invite(invite, user, group, url)
     
     invite = @invite
     
