@@ -1,0 +1,20 @@
+<h1>Hi, New invite Existent User</h1>
+<h4>User: <%= User.last.id %></h4>
+<h3>You have a invitation from <%= Invite.last.sender_name %> to play 
+<%= Group.last.game.name %> game.</h3>
+
+<br>
+
+Invite id: <%= Invite.last.id %>
+<br>
+Email: <%= Invite.last.email %>
+<br>
+Token: <%= Invite.last.token %>
+<br>
+Group: <%= Invite.last.group_id %>
+<br>
+Sender id: <%= Invite.last.sender_id %>
+<br>
+Link: <%= link_to "Join", user_registration_url(:invite_token => Invite.last.token), target: :_blank  %>
+<br>
+<%= link_to user_registration_url(:invite_token => Invite.last.token), new_user_registration_url(:invite_token => Invite.last.token), target: :_blank  %>

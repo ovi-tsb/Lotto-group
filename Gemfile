@@ -41,6 +41,8 @@ gem 'nokogiri', '~> 1.10', '>= 1.10.9'
 gem 'httparty', '~> 0.18.0'
 gem 'pry', '~> 0.13.0'
 
+gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'

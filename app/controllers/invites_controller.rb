@@ -16,16 +16,26 @@ class InvitesController < ApplicationController
       @invite.sender_name = current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize
       # @invite.sender = "Steve"
     respond_to do |format| 
-       if @invite.save
-        # CommentMailer.new_comment(@group, current_user, @game).deliver_now
-        InviteMailer.new_invite(@user, @invite, @group, new_user_registration_path(:invite_token => @invite.token)).deliver_now
-        # InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
-         format.html { redirect_to invites_path, notice: 'Group was successfully created.' }
-         format.json { render :index, status: :created, location: @invite }
-       else
+      if @invite.save
+        #if the user already exists
+        if @invite.recipient != nil 
+          #send a notification email
+          InviteMailer.existing_user_invite(@user, @invite, @group).deliver 
+
+          #Add the user to the user group
+          @invite.recipient.user_groups.push(@invite.user_group)
+        else 
+          # CommentMailer.new_comment(@group, current_user, @game).deliver_now
+          InviteMailer.new_invite(@user, @invite, @group, new_user_registration_path(:invite_token => @invite.token)).deliver_now
+          # InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
+          format.html { redirect_to invites_path, notice: 'Group was successfully created.' }
+          format.json { render :index, status: :created, location: @invite }
+        end   
+        
+      else
          format.html { render :new }
          format.json { render json: @invite.errors, status: :unprocessable_entity }
-       end
+      end
    end
 
     # respond_to do |format|

@@ -50,7 +50,14 @@
         <% end %>
 
         <br><br>
-        <%= link_to "Send Email", new_comment_path, class: "btn btn-primary custom-class", :type => "button" %><br><br>
+        Devise sender
+        <%= simple_form_for(User.new, url: user_invitation_path, html: { class: 'form-inline' }) do |f| %>
+
+            <%#= f.hidden_field :group_id, :value => @group.id %>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+            <%= f.submit 'Invite', class: 'btn-primary' %>
+        <% end %>
         
 
     <% elsif %>
